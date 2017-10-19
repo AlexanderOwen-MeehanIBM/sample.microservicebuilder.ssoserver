@@ -6,12 +6,12 @@ spec:
   replicas: 1
   template:
     metadata:
-      labels: 
+      labels:
         name: ssoserver-deployment
     spec:
       containers:
       - name: microservice-ssoserver
-        image: microservice-ssoserver:latest        
+        image: microservice-ssoserver:latest
         ports:
           - containerPort: 9443
         imagePullPolicy: IfNotPresent
@@ -30,7 +30,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: ipaddr-config
-                key: EXTERNAL_IP_ADDR                
+                key: EXTERNAL_IP_ADDR
         volumeMounts:
         - name: keystore
           mountPath: /etc/wlp/config/keystore
@@ -58,6 +58,7 @@ spec:
               path: keystore.xml
             - key: logging.xml
               path: logging.xml
+          optional: true
 ---
 apiVersion: v1
 kind: Service
@@ -69,6 +70,6 @@ spec:
   ports:
     - port: 9443
       nodePort: 31005
-    
+
   selector:
     name: ssoserver-deployment
