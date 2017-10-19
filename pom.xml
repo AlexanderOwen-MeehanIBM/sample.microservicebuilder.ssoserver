@@ -42,9 +42,6 @@
               <execution>
                 <phase>prepare-package</phase>
                 <configuration>
-                  <target>
-                    <ant antfile="createUseridsSecret.xml"/>
-                  </target>
                 </configuration>
                 <goals>
                   <goal>run</goal>
