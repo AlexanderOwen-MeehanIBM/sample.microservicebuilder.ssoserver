@@ -5,11 +5,11 @@ RUN rm -f /config
 RUN mkdir -p /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults
 RUN mkdir -p /opt/ibm/wlp/usr/servers/defaultServer/configMount
 
-RUN ln -s  /opt/ibm/wlp/usr/servers/defaultServer/configMount/keystore.xml \ 
- /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/keystore.xml  
+#RUN ln -s  /opt/ibm/wlp/usr/servers/defaultServer/configMount/keystore.xml \ 
+# /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/keystore.xml  
 
-RUN ln -s  /opt/ibm/wlp/usr/servers/defaultServer/configMount/logging.xml \
- /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/logging.xml 
+#RUN ln -s  /opt/ibm/wlp/usr/servers/defaultServer/configMount/logging.xml \
+# /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/logging.xml 
 
 # mount the userids
 RUN mkdir -p /opt/ibm/wlp/usr/servers/defaultServer/useridMount
