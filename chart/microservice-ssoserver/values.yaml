@@ -1,0 +1,10 @@
+replicaCount: 1
+revisionHistoryLimit: 1
+image:
+  repository: microservice-schedule
+  tag: latest
+  pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 200m
+      memory: 300Mi

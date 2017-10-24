@@ -1,17 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: microservice-ssoserver-sample
+  name: "{{  .Chart.Name }}-deployment"
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: ssoserver-deployment
+        app: "{{  .Chart.Name }}-selector"
+        version: "current"
     spec:
       containers:
-      - name: microservice-ssoserver
-        image: microservice-ssoserver:latest
+      - name: "{{  .Chart.Name  }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
           - containerPort: 9443
         imagePullPolicy: IfNotPresent
@@ -69,7 +70,7 @@ spec:
   type: NodePort
   ports:
     - port: 9443
-      nodePort: 31005
+      nodePort: 32000
 
   selector:
     name: ssoserver-deployment
