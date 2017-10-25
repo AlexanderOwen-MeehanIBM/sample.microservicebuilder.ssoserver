@@ -3,10 +3,8 @@
          <basicRegistry id="basic" realm="OpBasicRealm">
          <!-- insert your usernames and passwords here -->
          <!-- passwords can be encrypted using the securityUtility tool --> 
-         <!--
          <user name="theuser" password="bigsecret" /> 
          <user name="user1" password="security" /> 
-         -->
          </basicRegistry>   
     </server>
     
