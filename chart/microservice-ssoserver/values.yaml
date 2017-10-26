@@ -1,7 +1,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: microservice-schedule
+  repository: microservice-ssoserver
   tag: latest
   pullPolicy: IfNotPresent
   resources:
